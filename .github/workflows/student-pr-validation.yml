@@ -117,7 +117,7 @@ jobs:
             if is_forbidden_file "$file"; then
               echo "🚫 $file (archivo prohibido)"
               FORBIDDEN_FILES="$FORBIDDEN_FILES\n  - $file"
-              ((FORBIDDEN_COUNT++))
+              FORBIDDEN_COUNT=$((FORBIDDEN_COUNT + 1))
               continue
             fi
 
@@ -125,11 +125,11 @@ jobs:
             # Pattern: estudiantes/USERNAME/ or estudiantes/USERNAME/anything
             if [[ "$file" =~ ^estudiantes/"$PR_AUTHOR"(/.*)?$ ]]; then
               echo "✅ $file"
-              ((VALID_COUNT++))
+              VALID_COUNT=$((VALID_COUNT + 1))
             else
               echo "❌ $file"
               INVALID_FILES="$INVALID_FILES\n  - $file"
-              ((INVALID_COUNT++))
+              INVALID_COUNT=$((INVALID_COUNT + 1))
             fi
           done <<< "$CHANGED_FILES"
 

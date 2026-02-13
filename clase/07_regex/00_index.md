@@ -164,7 +164,7 @@ Proceso: Vi que todos los strings que quiero matchear empiezan con "foo",
 
 ---
 
-:::homework{id="7.2" title="Bandit OverTheWire - Niveles 6-10" due="2026-02-12" points="20"}
+:::homework{id="7.2" title="Bandit OverTheWire - Niveles 6-10" due="2026-02-17" points="20"}
 
 **URL:** [https://overthewire.org/wargames/bandit/](https://overthewire.org/wargames/bandit/)
 
@@ -178,6 +178,7 @@ Esta tarea es para que aprendas a buscar información **a la antigua**. Queremos
 1. **Pienses** qué necesitas hacer
 2. **Busques** cómo funciona el comando (no la solución)
 3. **Experimentes** en la terminal
+
 
 ### Recursos permitidos:
 
