@@ -550,6 +550,35 @@
     ],
     "has_frontmatter": false
   },
+  "08_containers/06_nested.md": {
+    "path": "clase/08_containers/06_nested.md",
+    "title": "Contenedores anidados",
+    "type": "lesson",
+    "order": 6,
+    "date": null,
+    "summary": null,
+    "tags": [],
+    "due_date": null,
+    "components": [
+      {
+        "type": "exercise",
+        "attrs": {
+          "title": "Contenedores anidados",
+          "difficulty": "3"
+        },
+        "content_preview": "**Ejecuta todos los comandos manualmente.** Cada sección es independiente — limpia antes de pasar a la siguiente.\n\n### Parte A: Docker-in-Docker\n\n1. Levanta un contenedor DinD:\n\n```bash\ndocker run -d "
+      },
+      {
+        "type": "prompt",
+        "attrs": {
+          "title": "Diseñar pipeline CI/CD con contenedores anidados",
+          "for": "ChatGPT/Claude"
+        },
+        "content_preview": "Necesito diseñar un pipeline de CI/CD que:\n- Corre dentro de un contenedor (ambiente controlado)\n- Necesita construir imágenes Docker de mi aplicación\n- Necesita levantar contenedores de test (Postgre"
+      }
+    ],
+    "has_frontmatter": false
+  },
   "07_regex/01_que_es_regex.md": {
     "path": "clase/07_regex/01_que_es_regex.md",
     "title": "¿Qué es Regex?",

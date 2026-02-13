@@ -11,7 +11,7 @@ mkdir -p results
 
 echo "============================================"
 echo "  Benchmarks de Contenedores"
-echo "  3 Experimentos: LAUNCH + CAPACITY + RUNNING"
+echo "  4 Experimentos: LAUNCH + CAPACITY + RUNNING + NESTED"
 echo "============================================"
 echo ""
 
@@ -34,6 +34,7 @@ BENCHMARKS=(
     "bench_startup.sh:Exp 1 — Startup Latency (LAUNCH cost)"
     "bench_scale.sh:Exp 2 — Resource Footprint at Scale (LAUNCH + CAPACITY)"
     "bench_runtime.sh:Exp 3 — Runtime Overhead (RUNNING cost)"
+    "exp4_nested.sh:Exp 4 — Nested Container Performance"
 )
 
 for entry in "${BENCHMARKS[@]}"; do

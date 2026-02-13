@@ -31,12 +31,16 @@ COLORS = {
     "bare": "#6c757d",
     "docker": "#0db7ed",
     "podman": "#892ca0",
+    "dind": "#0a8ab5",
+    "podman-nested": "#6b1f80",
 }
 
 LABELS = {
     "bare": "Bare Metal",
     "docker": "Docker",
     "podman": "Podman",
+    "dind": "Docker-in-Docker",
+    "podman-nested": "Podman-in-Podman",
 }
 
 
@@ -345,6 +349,114 @@ def plot_exp3_runtime():
     save_fig(fig, "exp3_runtime.png")
 
 
+def plot_exp4_nested():
+    """Exp 4: 2 panels — startup latency (bars) + CPU overhead (bars) at nesting levels."""
+    rows = read_csv("exp4_nested.csv")
+    if not rows:
+        return
+
+    # Group by (method, metric)
+    data = {}
+    for row in rows:
+        key = (row["method"], row["metric"])
+        try:
+            data.setdefault(key, []).append(float(row["value"]))
+        except (ValueError, KeyError):
+            continue
+
+    if not data:
+        return
+
+    methods = ["bare", "docker", "dind", "podman", "podman-nested"]
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 5), facecolor="#1a1a2e")
+
+    # Panel 1: Startup latency
+    startup_meds = []
+    startup_colors = []
+    startup_labels = []
+    startup_yerr_lo = []
+    startup_yerr_hi = []
+    for m in methods:
+        vals = data.get((m, "startup_ms"), [])
+        if vals:
+            med, q1, q3 = median_iqr(vals)
+            startup_meds.append(med)
+            startup_yerr_lo.append(med - q1)
+            startup_yerr_hi.append(q3 - med)
+        else:
+            startup_meds.append(0)
+            startup_yerr_lo.append(0)
+            startup_yerr_hi.append(0)
+        startup_colors.append(COLORS.get(m, "#aaa"))
+        label = LABELS.get(m, m)
+        # Line break for long labels
+        if "-" in m or " " in label:
+            parts = label.split("-") if "-" in label else label.split(" ", 1)
+            label = "\n".join(parts) if len(parts) == 2 else label
+        startup_labels.append(label)
+
+    bars1 = ax1.bar(range(len(methods)), startup_meds, color=startup_colors,
+                    edgecolor="#333", linewidth=0.5,
+                    yerr=[startup_yerr_lo, startup_yerr_hi], capsize=5,
+                    error_kw={"color": "white", "linewidth": 1.2})
+    for bar, med in zip(bars1, startup_meds):
+        ax1.text(bar.get_x() + bar.get_width() / 2,
+                 bar.get_height() + max(startup_meds) * 0.03,
+                 f"{med:.0f} ms", ha="center", va="bottom",
+                 color="white", fontsize=9)
+
+    ax1.set_xticks(range(len(methods)))
+    ax1.set_xticklabels(startup_labels, fontsize=9, color="white")
+    style_ax(ax1, "Startup Latency por Nivel de Nesting", "Tiempo (ms)")
+
+    # Panel 2: CPU overhead
+    cpu_meds = []
+    cpu_colors = []
+    cpu_labels = []
+    cpu_yerr_lo = []
+    cpu_yerr_hi = []
+    for m in methods:
+        vals = data.get((m, "cpu_s"), [])
+        if vals:
+            med, q1, q3 = median_iqr(vals)
+            cpu_meds.append(med)
+            cpu_yerr_lo.append(med - q1)
+            cpu_yerr_hi.append(q3 - med)
+        else:
+            cpu_meds.append(0)
+            cpu_yerr_lo.append(0)
+            cpu_yerr_hi.append(0)
+        cpu_colors.append(COLORS.get(m, "#aaa"))
+        label = LABELS.get(m, m)
+        if "-" in m or " " in label:
+            parts = label.split("-") if "-" in label else label.split(" ", 1)
+            label = "\n".join(parts) if len(parts) == 2 else label
+        cpu_labels.append(label)
+
+    bars2 = ax2.bar(range(len(methods)), cpu_meds, color=cpu_colors,
+                    edgecolor="#333", linewidth=0.5,
+                    yerr=[cpu_yerr_lo, cpu_yerr_hi], capsize=5,
+                    error_kw={"color": "white", "linewidth": 1.2})
+
+    bare_med = cpu_meds[0] if cpu_meds[0] > 0 else 1
+    for bar, med in zip(bars2, cpu_meds):
+        pct = ((med - bare_med) / bare_med) * 100
+        label = f"{med:.3f}s" if med == bare_med else f"{med:.3f}s\n({pct:+.0f}%)"
+        ax2.text(bar.get_x() + bar.get_width() / 2,
+                 bar.get_height() + max(cpu_meds) * 0.03,
+                 label, ha="center", va="bottom",
+                 color="white", fontsize=9)
+
+    ax2.set_xticks(range(len(methods)))
+    ax2.set_xticklabels(cpu_labels, fontsize=9, color="white")
+    style_ax(ax2, "CPU Overhead (sha256sum 50MB, exec)", "Tiempo (s)")
+
+    fig.suptitle("Exp 4: Nested Container Performance", color="white",
+                 fontsize=16, fontweight="bold", y=1.02)
+    fig.tight_layout()
+    save_fig(fig, "exp4_nested.png")
+
+
 def print_summary():
     """Imprime una tabla resumen en texto."""
     print("\n" + "=" * 60)
@@ -409,6 +521,36 @@ def print_summary():
                         pct = ((med - bare_med) / bare_med) * 100
                         print(f"    {LABELS.get(rt, rt):15s} {med:.4f}s ({pct:+.1f}%)")
 
+    # Exp 4
+    rows = read_csv("exp4_nested.csv")
+    if rows:
+        data = {}
+        for row in rows:
+            key = (row["method"], row["metric"])
+            try:
+                data.setdefault(key, []).append(float(row["value"]))
+            except (ValueError, KeyError):
+                pass
+        methods = ["bare", "docker", "dind", "podman", "podman-nested"]
+        print("\nExp 4 — Nested Containers:")
+        print("  Startup (mediana):")
+        for m in methods:
+            vals = data.get((m, "startup_ms"), [])
+            if vals:
+                med = statistics.median(vals)
+                print(f"    {LABELS.get(m, m):22s} {med:8.1f} ms")
+        print("  CPU sha256sum 50MB (mediana):")
+        bare_cpu = statistics.median(data.get(("bare", "cpu_s"), [1]))
+        for m in methods:
+            vals = data.get((m, "cpu_s"), [])
+            if vals:
+                med = statistics.median(vals)
+                if m == "bare":
+                    print(f"    {LABELS.get(m, m):22s} {med:.3f}s")
+                else:
+                    pct = ((med - bare_cpu) / bare_cpu) * 100
+                    print(f"    {LABELS.get(m, m):22s} {med:.3f}s ({pct:+.1f}%)")
+
     print("\n" + "=" * 60)
 
 
@@ -420,6 +562,7 @@ def main():
     plot_exp1_startup()
     plot_exp2_scale()
     plot_exp3_runtime()
+    plot_exp4_nested()
 
     print_summary()
 

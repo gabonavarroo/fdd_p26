@@ -537,6 +537,19 @@
           "summary": null
         },
         {
+          "name": "06_nested.md",
+          "path": "08_containers/06_nested.md",
+          "type": "file",
+          "title": "Contenedores anidados",
+          "order": [
+            0,
+            6,
+            0,
+            ""
+          ],
+          "summary": null
+        },
+        {
           "name": "example",
           "path": "08_containers/example",
           "type": "directory",
