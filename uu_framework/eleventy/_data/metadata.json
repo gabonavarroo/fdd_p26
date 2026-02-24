@@ -11,6 +11,116 @@
     "components": [],
     "has_frontmatter": true
   },
+  "11_python_intermedio/01_repaso_ingenieria.md": {
+    "path": "clase/11_python_intermedio/01_repaso_ingenieria.md",
+    "title": "Repaso: Ingeniería de Software en Python",
+    "type": "lesson",
+    "order": 1,
+    "date": null,
+    "summary": null,
+    "tags": [],
+    "due_date": null,
+    "components": [
+      {
+        "type": "exercise",
+        "attrs": {
+          "title": "Verificación rápida",
+          "difficulty": "1"
+        },
+        "content_preview": "Sin ver el material de arriba, responde:\n\n1. ¿Qué archivo necesita un directorio para ser un paquete de Python?\n2. ¿Cuál es la diferencia entre `_metodo` y `metodo` en una clase?\n3. ¿Qué hace `super()"
+      },
+      {
+        "type": "exercise",
+        "attrs": {
+          "title": "Mini-paquete",
+          "difficulty": "2"
+        },
+        "content_preview": "Crea un paquete llamado `calculadora` con esta estructura:\n\n```\ncalculadora/\n├── __init__.py\n├── basica.py        # sumar, restar, multiplicar, dividir\n└── estadistica.py   # promedio, mediana\n```\n\n1."
+      },
+      {
+        "type": "prompt",
+        "attrs": {
+          "title": "Revisar estructura de un paquete Python",
+          "for": "ChatGPT/Claude"
+        },
+        "content_preview": "Tengo un paquete de Python con esta estructura:\n\n```\n[pega aquí tu estructura de directorios]\n```\n\nY este es mi `__init__.py`:\n\n```python\n[pega aquí tu código]\n```\n\nRevisa:\n1. ¿La estructura tiene sen"
+      }
+    ],
+    "has_frontmatter": false
+  },
+  "11_python_intermedio/02_disenando_una_libreria.md": {
+    "path": "clase/11_python_intermedio/02_disenando_una_libreria.md",
+    "title": "Diseñando una librería",
+    "type": "lesson",
+    "order": 2,
+    "date": null,
+    "summary": null,
+    "tags": [],
+    "due_date": null,
+    "components": [
+      {
+        "type": "exercise",
+        "attrs": {
+          "title": "Define tu quantum",
+          "difficulty": "1"
+        },
+        "content_preview": "Elige un dominio que te interese (o usa uno de estos):\n\n- Validación de datos (CSVs, JSONs, inputs de usuario)\n- Conversión de formatos (fechas, unidades, monedas, archivos)\n- Análisis de texto (frecu"
+      },
+      {
+        "type": "exercise",
+        "attrs": {
+          "title": "Vocabulario de tu librería",
+          "difficulty": "2"
+        },
+        "content_preview": "Para la librería que elegiste en el ejercicio anterior:\n\n1. Lista **5-7 sustantivos** (las cosas con las que trabaja tu librería)\n2. Lista **5-7 verbos** (las operaciones que hace)\n3. Para cada sustan"
+      },
+      {
+        "type": "exercise",
+        "attrs": {
+          "title": "Dream usage",
+          "difficulty": "2"
+        },
+        "content_preview": "Escribe el **dream usage** de tu librería. Máximo 15 líneas de código.\n\nEl código no tiene que funcionar — es lo que **deseas** que exista. Incluye:\n\n1. Los imports\n2. La configuración inicial (si la "
+      },
+      {
+        "type": "exercise",
+        "attrs": {
+          "title": "Estructura y sketches",
+          "difficulty": "2"
+        },
+        "content_preview": "Para tu librería:\n\n1. Dibuja la **estructura del paquete** (árbol de directorios y archivos)\n2. Escribe las **firmas con docstrings** de las 3-4 funciones/clases más importantes\n3. Escribe el `__init_"
+      },
+      {
+        "type": "exercise",
+        "attrs": {
+          "title": "Tu documento de diseño",
+          "difficulty": "3"
+        },
+        "content_preview": "Escribe el documento de diseño completo para tu librería siguiendo la estructura de la sección 6.\n\n**Antes de empezar**, revisa:\n- ¿Tu quantum es realmente la cosa más pequeña útil?\n- ¿Tu dream usage "
+      },
+      {
+        "type": "prompt",
+        "attrs": {
+          "title": "Revisión de diseño entre compañeros",
+          "for": "Un compañero"
+        },
+        "content_preview": "Lee el documento de diseño de tu compañero y responde:\n\n1. **¿Entiendes el problema?** Lee solo la sección \"Problema\". ¿Podrías explicarlo con tus propias palabras?\n2. **¿El dream usage tiene sentido?"
+      }
+    ],
+    "has_frontmatter": false
+  },
+  "11_python_intermedio/00_index.md": {
+    "path": "clase/11_python_intermedio/00_index.md",
+    "title": "Módulo 11: Python Intermedio",
+    "type": "lesson",
+    "order": 0,
+    "date": null,
+    "summary": null,
+    "tags": [],
+    "due_date": null,
+    "components": [],
+    "has_frontmatter": false
+  },
   "06_git/03_workflow.md": {
     "path": "clase/06_git/03_workflow.md",
     "title": "Flujo de Trabajo para Entregar Tareas",
@@ -1257,6 +1367,154 @@
           "difficulty": "3"
         },
         "content_preview": "```bash\necho \"=== MENÚ ===\"\necho \"1. Ver fecha\"\necho \"2. Ver usuario\"\necho \"3. Ver directorio\"\necho \"4. Salir\"\necho \"\"\nread -p \"Elige opción (1-4): \" opcion\n\n# Responder según opción\ncase $opcion in\n "
+      }
+    ],
+    "has_frontmatter": false
+  },
+  "10_ides/06_proyecto_e2e_python_docker.md": {
+    "path": "clase/10_ides/06_proyecto_e2e_python_docker.md",
+    "title": "Ejercicio E2E: proyecto Python + Docker en VS Code",
+    "type": "lesson",
+    "order": 6,
+    "date": null,
+    "summary": null,
+    "tags": [],
+    "due_date": null,
+    "components": [
+      {
+        "type": "exercise",
+        "attrs": {
+          "title": "E2E: construir, ejecutar y debuggear (Python + Docker)",
+          "difficulty": "4"
+        },
+        "content_preview": "## Parte A — Crear el proyecto (local)\n\n1. Crea el directorio del proyecto y ábrelo en VS Code:\n\n```bash\nmkdir -p ~/e2e_ide_python_docker\ncd ~/e2e_ide_python_docker\ncode .\n```\n\n2. Crea un entorno virt"
+      }
+    ],
+    "has_frontmatter": false
+  },
+  "10_ides/01_que_es_una_ide.md": {
+    "path": "clase/10_ides/01_que_es_una_ide.md",
+    "title": "¿Qué es una IDE?",
+    "type": "lesson",
+    "order": 1,
+    "date": null,
+    "summary": null,
+    "tags": [],
+    "due_date": null,
+    "components": [
+      {
+        "type": "exercise",
+        "attrs": {
+          "title": "Proyecto vs archivo suelto",
+          "difficulty": "1"
+        },
+        "content_preview": "1. Crea una carpeta:\n\n```bash\nmkdir -p ~/prueba-ide && cd ~/prueba-ide\n```\n\n2. Crea un archivo `hola.py`:\n\n```python\nprint(\"hola\")\n```\n\n3. Abre la carpeta en VS Code (lo veremos en la siguiente secció"
+      }
+    ],
+    "has_frontmatter": false
+  },
+  "10_ides/05_jupyter_debugging.md": {
+    "path": "clase/10_ides/05_jupyter_debugging.md",
+    "title": "Jupyter notebooks, tabs y flujo de trabajo",
+    "type": "lesson",
+    "order": 5,
+    "date": null,
+    "summary": null,
+    "tags": [],
+    "due_date": null,
+    "components": [
+      {
+        "type": "exercise",
+        "attrs": {
+          "title": "Notebook reproducible (sin estado oculto)",
+          "difficulty": "2"
+        },
+        "content_preview": "1. Crea un proyecto y un venv:\n\n```bash\nmkdir -p ~/nb-repro && cd ~/nb-repro\nuv venv\nsource .venv/bin/activate\nuv pip install ipykernel pandas\n```\n\n2. En VS Code crea `exploracion.ipynb`.\n3. En la pri"
+      }
+    ],
+    "has_frontmatter": false
+  },
+  "10_ides/03_python_en_vscode.md": {
+    "path": "clase/10_ides/03_python_en_vscode.md",
+    "title": "Python en VS Code (entornos, ejecutar y debuggear)",
+    "type": "lesson",
+    "order": 3,
+    "date": null,
+    "summary": null,
+    "tags": [],
+    "due_date": null,
+    "components": [
+      {
+        "type": "prompt",
+        "attrs": {
+          "title": "Mi VS Code usa el Python incorrecto",
+          "for": "ChatGPT/Claude"
+        },
+        "content_preview": "Estoy en Linux/macOS/Windows(WSL2) y VS Code no está usando el intérprete correcto.\n\nMi estructura de proyecto es:\n```\n[pega el resultado de: ls -la]\n```\n\nEn VS Code seleccioné este intérprete:\n[pega "
+      }
+    ],
+    "has_frontmatter": false
+  },
+  "10_ides/00_index.md": {
+    "path": "clase/10_ides/00_index.md",
+    "title": "Módulo 10: IDEs (VS Code)",
+    "type": "lesson",
+    "order": 0,
+    "date": null,
+    "summary": null,
+    "tags": [],
+    "due_date": null,
+    "components": [
+      {
+        "type": "homework",
+        "attrs": {
+          "id": "10.0",
+          "title": "Instalar y configurar VS Code para Python",
+          "points": "0"
+        },
+        "content_preview": "Tu meta es que al final puedas:\n- Abrir un proyecto Python (con entorno virtual)\n- Ejecutar y debuggear código desde VS Code\n- Usar Jupyter notebooks dentro de VS Code\n- Correr tu proyecto dentro de D"
+      }
+    ],
+    "has_frontmatter": false
+  },
+  "10_ides/04_extensiones_y_config.md": {
+    "path": "clase/10_ides/04_extensiones_y_config.md",
+    "title": "Extensiones, settings y personalización",
+    "type": "lesson",
+    "order": 4,
+    "date": null,
+    "summary": null,
+    "tags": [],
+    "due_date": null,
+    "components": [
+      {
+        "type": "exercise",
+        "attrs": {
+          "title": "Setup mínimo: Python + Ruff + Jupyter + Docker",
+          "difficulty": "2"
+        },
+        "content_preview": "1. Instala las extensiones: Python, Pylance, Jupyter, Ruff, Docker, Dev Containers.\n2. Reinicia VS Code (sí, a veces ayuda).\n3. Abre un proyecto Python con `.venv/`.\n4. Verifica:\n   - VS Code detecta "
+      }
+    ],
+    "has_frontmatter": false
+  },
+  "10_ides/02_vscode_instalacion_layout.md": {
+    "path": "clase/10_ides/02_vscode_instalacion_layout.md",
+    "title": "VS Code: instalación, layout y shortcuts",
+    "type": "lesson",
+    "order": 2,
+    "date": null,
+    "summary": null,
+    "tags": [],
+    "due_date": null,
+    "components": [
+      {
+        "type": "exercise",
+        "attrs": {
+          "title": "Instalación verificada + navegación básica",
+          "difficulty": "1"
+        },
+        "content_preview": "1. Abre VS Code.\n2. Abre una carpeta de trabajo (cualquiera).\n3. Abre la terminal integrada y ejecuta:\n\n```bash\npwd\nls\npython3 --version\n```\n\n4. Usa `Ctrl+P` / `Cmd+P` para abrir un archivo por nombre"
       }
     ],
     "has_frontmatter": false
