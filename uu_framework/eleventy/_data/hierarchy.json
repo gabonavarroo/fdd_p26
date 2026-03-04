@@ -1015,6 +1015,129 @@
       "title": "Modulo 12: Pandas — Arquitectura y Pipelines de Datos"
     },
     {
+      "name": "13_pandas_io",
+      "path": "13_pandas_io",
+      "type": "directory",
+      "order": [
+        0,
+        13,
+        0,
+        ""
+      ],
+      "children": [
+        {
+          "name": "01_io_y_encodings.md",
+          "path": "13_pandas_io/01_io_y_encodings.md",
+          "type": "file",
+          "title": "I/O y Encodings",
+          "order": [
+            0,
+            1,
+            0,
+            ""
+          ],
+          "summary": null
+        },
+        {
+          "name": "02_combinando_datos.md",
+          "path": "13_pandas_io/02_combinando_datos.md",
+          "type": "file",
+          "title": "Combinando DataFrames",
+          "order": [
+            0,
+            2,
+            0,
+            ""
+          ],
+          "summary": null
+        },
+        {
+          "name": "code",
+          "path": "13_pandas_io/code",
+          "type": "directory",
+          "order": [
+            3,
+            0,
+            0,
+            ""
+          ],
+          "children": [],
+          "has_index": false,
+          "title": "Code"
+        }
+      ],
+      "has_index": true,
+      "title": "Modulo 13: Pandas — I/O y Combinacion de Datos"
+    },
+    {
+      "name": "14_pandas_transformaciones",
+      "path": "14_pandas_transformaciones",
+      "type": "directory",
+      "order": [
+        0,
+        14,
+        0,
+        ""
+      ],
+      "children": [
+        {
+          "name": "01_funciones_vectorizadas.md",
+          "path": "14_pandas_transformaciones/01_funciones_vectorizadas.md",
+          "type": "file",
+          "title": "Funciones vectorizadas: apply, map y transform",
+          "order": [
+            0,
+            1,
+            0,
+            ""
+          ],
+          "summary": null
+        },
+        {
+          "name": "02_tiempo_y_groupby.md",
+          "path": "14_pandas_transformaciones/02_tiempo_y_groupby.md",
+          "type": "file",
+          "title": "Timestamps, Timezones y Groupby",
+          "order": [
+            0,
+            2,
+            0,
+            ""
+          ],
+          "summary": null
+        },
+        {
+          "name": "03_pandas3.md",
+          "path": "14_pandas_transformaciones/03_pandas3.md",
+          "type": "file",
+          "title": "Pandas 3.0 — Que cambio y por que importa",
+          "order": [
+            0,
+            3,
+            0,
+            ""
+          ],
+          "summary": null
+        },
+        {
+          "name": "code",
+          "path": "14_pandas_transformaciones/code",
+          "type": "directory",
+          "order": [
+            3,
+            0,
+            0,
+            ""
+          ],
+          "children": [],
+          "has_index": false,
+          "title": "Code"
+        }
+      ],
+      "has_index": true,
+      "title": "Modulo 14: Pandas — Transformaciones y Tiempo"
+    },
+    {
       "name": "a_stack",
       "path": "a_stack",
       "type": "directory",

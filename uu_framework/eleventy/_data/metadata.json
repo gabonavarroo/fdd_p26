@@ -1200,6 +1200,63 @@
     ],
     "has_frontmatter": false
   },
+  "14_pandas_transformaciones/01_funciones_vectorizadas.md": {
+    "path": "clase/14_pandas_transformaciones/01_funciones_vectorizadas.md",
+    "title": "Funciones vectorizadas: apply, map y transform",
+    "type": "lesson",
+    "order": 1,
+    "date": null,
+    "summary": null,
+    "tags": [],
+    "due_date": null,
+    "components": [],
+    "has_frontmatter": false
+  },
+  "14_pandas_transformaciones/03_pandas3.md": {
+    "path": "clase/14_pandas_transformaciones/03_pandas3.md",
+    "title": "Pandas 3.0 — Que cambio y por que importa",
+    "type": "lesson",
+    "order": 3,
+    "date": null,
+    "summary": null,
+    "tags": [],
+    "due_date": null,
+    "components": [
+      {
+        "type": "exercise",
+        "attrs": {
+          "title": "Auditoria de compatibilidad",
+          "difficulty": "2"
+        },
+        "content_preview": "Toma cualquier notebook de pandas que hayas escrito (de los modulos 12, 13 o 14). Busca: (1) uso de `applymap`, (2) patrones de chained indexing como `df[cond][\"col\"] = val`, (3) uso de `.append()`, ("
+      }
+    ],
+    "has_frontmatter": false
+  },
+  "14_pandas_transformaciones/00_index.md": {
+    "path": "clase/14_pandas_transformaciones/00_index.md",
+    "title": "Modulo 14: Pandas — Transformaciones y Tiempo",
+    "type": "lesson",
+    "order": 0,
+    "date": null,
+    "summary": null,
+    "tags": [],
+    "due_date": null,
+    "components": [],
+    "has_frontmatter": false
+  },
+  "14_pandas_transformaciones/02_tiempo_y_groupby.md": {
+    "path": "clase/14_pandas_transformaciones/02_tiempo_y_groupby.md",
+    "title": "Timestamps, Timezones y Groupby",
+    "type": "lesson",
+    "order": 2,
+    "date": null,
+    "summary": null,
+    "tags": [],
+    "due_date": null,
+    "components": [],
+    "has_frontmatter": false
+  },
   "05_bash/05_expansion_sustitucion.md": {
     "path": "clase/05_bash/05_expansion_sustitucion.md",
     "title": "Expansión y Sustitución",
@@ -1635,6 +1692,51 @@
         "content_preview": "```bash\necho \"=== MENÚ ===\"\necho \"1. Ver fecha\"\necho \"2. Ver usuario\"\necho \"3. Ver directorio\"\necho \"4. Salir\"\necho \"\"\nread -p \"Elige opción (1-4): \" opcion\n\n# Responder según opción\ncase $opcion in\n "
       }
     ],
+    "has_frontmatter": false
+  },
+  "13_pandas_io/02_combinando_datos.md": {
+    "path": "clase/13_pandas_io/02_combinando_datos.md",
+    "title": "Combinando DataFrames",
+    "type": "lesson",
+    "order": 2,
+    "date": null,
+    "summary": null,
+    "tags": [],
+    "due_date": null,
+    "components": [],
+    "has_frontmatter": false
+  },
+  "13_pandas_io/01_io_y_encodings.md": {
+    "path": "clase/13_pandas_io/01_io_y_encodings.md",
+    "title": "I/O y Encodings",
+    "type": "lesson",
+    "order": 1,
+    "date": null,
+    "summary": null,
+    "tags": [],
+    "due_date": null,
+    "components": [
+      {
+        "type": "exercise",
+        "attrs": {
+          "title": "Autopsia de un mojibake",
+          "difficulty": "2"
+        },
+        "content_preview": "Abre cualquier CSV con datos en espanol que tengas guardado. Leelo primero con `encoding=\"utf-8\"`, luego con `encoding=\"latin-1\"`, luego con `encoding=\"cp1252\"`. Compara los resultados en columnas con"
+      }
+    ],
+    "has_frontmatter": false
+  },
+  "13_pandas_io/00_index.md": {
+    "path": "clase/13_pandas_io/00_index.md",
+    "title": "Modulo 13: Pandas — I/O y Combinacion de Datos",
+    "type": "lesson",
+    "order": 0,
+    "date": null,
+    "summary": null,
+    "tags": [],
+    "due_date": null,
+    "components": [],
     "has_frontmatter": false
   },
   "10_ides/06_proyecto_e2e_python_docker.md": {
