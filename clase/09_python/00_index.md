@@ -86,7 +86,7 @@ Completa el curso y sube la certificacion a tu directorio de certificaciones, cr
 :::
 
 
-:::homework{id="9.6" title="Curso de Polars" due="2026-03-03" points="20"}
+:::homework{id="9.6" title="Curso de Polars" due="2026-03-10" points="20"}
 
 Curso de Python:https://app.datacamp.com/learn/courses/introduction-to-polars 
 
@@ -94,7 +94,33 @@ Completa el curso y sube la certificacion a tu directorio de certificaciones, cr
 
 :::
 
-:::homework{id="9.7" title="Introduccion a APIs" due="2026-03-05" points="20"}
+
+
+:::project{id="9.P1" title="Proyecto: Librería de Python publicable en PyPI" due="2026-04-09" points="10"}
+
+Desarrolla una librería de Python útil y publicable. El tema es libre, pero debe resolver un problema real y tener un caso de uso claro.
+
+**Requisitos obligatorios:**
+1. Librería instalable con `pip`.
+2. Repositorio en GitHub con todo el código, más flujo de build y deployment/publicación a PyPI.
+3. Uso decente y relevante (no una librería trivial).
+4. Notebook tutorial que:
+   - Instale la librería desde PyPI al inicio (`pip install ...`).
+   - Explique paso a paso cómo usarla.
+   - Esté enlazado para abrirse en Google Colab.
+5. Documentación decente con README(s) claros de instalación, uso y ejemplos.
+6. Versión dockerizada con ejemplos y scripts de la librería o pruebas/tests.
+
+**Entrega (Canvas):**
+1. Link al repositorio de GitHub.
+2. Link al README principal.
+3. El README debe contener el link "Open in Colab" al notebook tutorial.
+
+La idea central es que el notebook instale directamente la librería desde PyPI y demuestre su uso como tutorial reproducible.
+
+::::
+
+<!-- :::homework{id="9.7" title="Introduccion a APIs" due="2026-03-05" points="20"}
 
 Curso de Python:https://app.datacamp.com/learn/courses/introduction-to-apis-in-python
 
@@ -108,4 +134,4 @@ Curso de Python:https://app.datacamp.com/learn/courses/introduction-to-fastapi
 
 Completa el curso y sube la certificacion a tu directorio de certificaciones, crea un nuevo file llamado python_fast_api_07.md y adjunta el link a la certificacion. No olvides referenciarlo en canvas (el pull request).
 
-:::
+::: -->
